@@ -1,0 +1,22 @@
+body {
+  background-color: #9b4120;
+  }
+
+.resultpane {
+  display: none;
+}
+
+.jumbotron {
+  background: repeating-linear-gradient(55deg, #919191, #919191 10px, #8fe5e8 10px, #8fe5e8 20px);
+  font-family: 'Permanent Marker', cursive;
+}
+
+
+label {
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  border: solid 4px black;
+}

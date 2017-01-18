@@ -51,7 +51,7 @@ $(function(){
     event.preventDefault();
     var input = $("#input").val();
     var result = translator(input);
-
+    $(".resultpane").slideDown();
     $(".result").text(result);
 
   });
