@@ -2,9 +2,10 @@
 var result;
 
 function translator(input){
+  // Vowel Test
   if (/^[aeiou]$/ig.test(input.charAt(0))) {
     result = input + "ay";
-
+    // Y Test
   } else if (/^[y]$/ig.test(input.charAt(0))) {
     var wordArray = input.split("");
 
@@ -14,14 +15,24 @@ function translator(input){
     };
     result = wordArray.join("") + "ay";
 
+  // Consonant Test
   } else if (/^[qwrtpsdfghjklzxcvbnm]/ig.test(input.charAt(0))) {
     var wordArray = input.split("");
 
     for (var index = 0; /^[qwrtpsdfghjklzxcvbnm]/ig.test(input.charAt(index)); index += 1) {
+      // Q Test
+      if (/^[q]/ig.test(input.charAt(index)) && /^[u]/ig.test(input.charAt(index + 1))) {
+        wordArray.push(input[index]);
+        wordArray.push(input[index + 1])
+        wordArray.shift();
+        wordArray.shift();
+      } else {
       wordArray.push(input[index]);
       wordArray.shift();
     };
+    };
     result = wordArray.join("") + "ay";
+
   } else {
 
   };
@@ -39,13 +50,3 @@ $(function(){
 
   });
 });
-
-
-// TESTING FOR QU
-// for (var index = 0; index < input.length; index += 1){
-//
-//   if (/(qu)/ig.test(input.slice(index, index + 1))) {
-//     newWord = input.slice(index + 2) + input.slice(index, index + 1);
-//   };
-// result = newWord + "ay";
-// };
