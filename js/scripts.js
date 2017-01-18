@@ -1,39 +1,34 @@
 // var vowels = ['a', 'e', 'i', 'o', 'u']
 // var consonants = ['y','q', 'w', 'r', 't', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
 //
-
+var result;
 
 function translator(input){
-  var result;
+
   if (/^[aeiou]$/ig.test(input.charAt(0))) {
     result = input + "ay";
 
-  } else if (/^[qwrtypsdfghjklzxcvbnm]$/ig.test(input.charAt(0))) {
+  } else if (/^[y]$/ig.test(input.charAt(0))) {
     var wordArray = input.split("");
 
-    for (var index = 0; index < wordArray.length; index += 1) {
-      if (/^[qwrtypsdfghjklzxcvbnm]$/ig.test(input.charAt(index))) {
-        wordArray.push(input[index]);
-        wordArray.shift();
-      } else {
-        return;
-      }
-    }
+    for (var index = 0; /^[yqwrtpsdfghjklzxcvbnm]$/ig.test(input.charAt(index)); index += 1) {
+      wordArray.push(input[index]);
+      wordArray.shift();
+      };
+      result = wordArray.join("") + "ay";
 
-    result = wordArray + "ay";
+  } else if (/^[qwrtpsdfghjklzxcvbnm]$/ig.test(input.charAt(0))) {
+    var wordArray = input.split("");
 
-    // var newWord = input.slice(2) + input.slice(0, 1);
-    // result = newWord + "ay"
-  } else {
+    for (var index = 0; /^[qwrtpsdfghjklzxcvbnm]$/ig.test(input.charAt(index)); index += 1) {
+      wordArray.push(input[index]);
+      wordArray.shift();
+      };
+      result = wordArray.join("") + "ay";
+    } else {
 
-
-
-
-    // var newWord = input.slice(1) + input.charAt(0);
-    // result = newWord + "ay"
-  }
-  return result;
-
+  };
+    return result;
 };
 
 
@@ -47,6 +42,7 @@ $(function(){
 
   });
 });
+
 
 
 //
