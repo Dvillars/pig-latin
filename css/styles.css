@@ -1,5 +1,5 @@
 body {
-  background-color: #9b4120;
+  background: #669b58;
   }
 
 .resultpane {
@@ -7,13 +7,27 @@ body {
 }
 
 .jumbotron {
-  background: repeating-linear-gradient(55deg, #919191, #919191 10px, #8fe5e8 10px, #8fe5e8 20px);
+  background: #9b5874;
   font-family: 'Permanent Marker', cursive;
+  color: white;
+  text-shadow: -5px 5px #4f2112;
 }
 
+.well {
+  background: #9b7158;
+  color: white;
+}
 
 label {
   color: white;
+}
+
+.btn {
+  background: #f7beef;
+}
+
+.btn:hover {
+  background: #9b5874;
 }
 
 img {
